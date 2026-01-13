@@ -250,15 +250,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{"moveSpeed":{"_value":10.0,"_name":"moveSpeed","_id":"b35eb256-5c5e-43b2-b51f-f65bca6a0472","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"turnSpeed":{"_value":5.0,"_name":"turnSpeed","_id":"a1cd9be8-9a63-450e-853f-9944dae1f6ac","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  _serializedBlackboard: '{"_variables":{"moveSpeed":{"_value":3.5,"_name":"moveSpeed","_id":"b35eb256-5c5e-43b2-b51f-f65bca6a0472","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"turnSpeed":{"_value":180.0,"_name":"turnSpeed","_id":"a1cd9be8-9a63-450e-853f-9944dae1f6ac","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"stoppingDistance":{"_value":0.1,"_name":"stoppingDistance","_id":"33612f3b-3a92-47fe-ad85-4bb2b4f9a11f","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
   _serializedVariables:
-  - _json: '{"_value":10.0,"_name":"moveSpeed","_id":"b35eb256-5c5e-43b2-b51f-f65bca6a0472","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_value":3.5,"_name":"moveSpeed","_id":"b35eb256-5c5e-43b2-b51f-f65bca6a0472","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_value":5.0,"_name":"turnSpeed","_id":"a1cd9be8-9a63-450e-853f-9944dae1f6ac","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_value":180.0,"_name":"turnSpeed","_id":"a1cd9be8-9a63-450e-853f-9944dae1f6ac","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_value":0.1,"_name":"stoppingDistance","_id":"33612f3b-3a92-47fe-ad85-4bb2b4f9a11f","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
 --- !u!114 &341929445
@@ -274,11 +278,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"actions":[{"target":{"_value":1},"speed":{"_name":"turnSpeed","_targetVariableID":"a1cd9be8-9a63-450e-853f-9944dae1f6ac"},"angleDifference":{"_value":5.0},"upVector":{"_value":{"y":1.0}},"waitActionFinish":true,"$type":"NodeCanvas.Tasks.Actions.RotateTowards"},{"target":{"_value":1},"speed":{"_name":"moveSpeed","_targetVariableID":"b35eb256-5c5e-43b2-b51f-f65bca6a0472"},"stopDistance":{"_value":0.1},"waitActionFinish":true,"$type":"NodeCanvas.Tasks.Actions.MoveTowards"}]},"_color":{"r":0.2095022,"g":1.0,"a":1.0},"_name":"Move
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"actions":[{"target":1,"moveSpeed":0.0,"turnSpeed":0.0,"stoppingDistance":0.0,"$type":"NodeCanvas.Tasks.Actions.MoveAndRotateTowards"}]},"_color":{"r":0.2095022,"g":1.0,"a":1.0},"_name":"Move
     to destination","_position":{"x":410.0,"y":195.0},"_comment":"Moving to destination","$type":"NodeCanvas.StateMachines.ActionState"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
-  - {fileID: 1366323901}
+  - {fileID: 1366323902}
   _boundGraphSource:
     _version: 3.33
     _category: 
@@ -569,10 +573,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 472122597564350446, guid: 10576d7483a75554c8f2bd77da815958, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 61604889c88596340a215da5024a317d, type: 2}
     - target: {fileID: 919132149155446097, guid: 10576d7483a75554c8f2bd77da815958, type: 3}
       propertyPath: m_Name
       value: Low_Poly_R2D2
       objectReference: {fileID: 0}
+    - target: {fileID: 2315537164802427800, guid: 10576d7483a75554c8f2bd77da815958, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 61604889c88596340a215da5024a317d, type: 2}
+    - target: {fileID: 6080800836800466006, guid: 10576d7483a75554c8f2bd77da815958, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 61604889c88596340a215da5024a317d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
