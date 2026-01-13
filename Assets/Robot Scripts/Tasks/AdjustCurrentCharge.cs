@@ -33,7 +33,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 			currentCharge.value += adjustmentAmount * Time.deltaTime;
 
-			agentBlackboard.SetVariableValue("currentCharge", currentCharge);
+			//agentBlackboard.SetVariableValue("currentCharge", currentCharge);
 		}
 
 	}
