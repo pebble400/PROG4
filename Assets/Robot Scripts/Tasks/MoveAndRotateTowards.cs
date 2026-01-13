@@ -8,26 +8,27 @@ namespace NodeCanvas.Tasks.Actions {
 	public class MoveAndRotateTowards : ActionTask {
 
 		public Transform target;
-		public float moveSpeed = 5f;
-		public float turnSpeed = 180f;
-		public float stoppingDistance = 0.1f;
+		public BBParameter<float> moveSpeed = 5f;
+		public BBParameter<float> turnSpeed = 180f;
+		public BBParameter<float> stoppingDistance = 0.1f;
 
 		private Blackboard agentBlackboard;
 
 		protected override string OnInit() 
 		{
-			agentBlackboard = agent.GetComponent<Blackboard>();
+            //agentBlackboard = agent.GetComponent<Blackboard>();
 
-			if (agentBlackboard != null) return null;
-			else return $"MoveAndRotateTowards - {agent.name}: Unable to get Blackboard reference!";
-		}
+            //if (agentBlackboard != null) return null;
+            //else return $"MoveAndRotateTowards - {agent.name}: Unable to get Blackboard reference!";
+            return null;
+        }
 
 		
 		protected override void OnExecute() 
 		{
-			moveSpeed = agentBlackboard.GetVariableValue<float>("moveSpeed");
-			turnSpeed = agentBlackboard.GetVariableValue<float>("turnSpeed");
-			stoppingDistance = agentBlackboard.GetVariableValue<float>("stoppingDistance");
+			//moveSpeed = agentBlackboard.GetVariableValue<float>("moveSpeed");
+			//turnSpeed = agentBlackboard.GetVariableValue<float>("turnSpeed");
+			//stoppingDistance = agentBlackboard.GetVariableValue<float>("stoppingDistance");
 		}
 
 	
@@ -37,11 +38,11 @@ namespace NodeCanvas.Tasks.Actions {
 			Quaternion rotation = Quaternion.LookRotation(direction);
 
 			agent.transform.SetPositionAndRotation(
-				agent.transform.position + moveSpeed * Time.deltaTime * agent.transform.forward,
-				Quaternion.RotateTowards(agent.transform.rotation, rotation, turnSpeed * Time.deltaTime)
+				agent.transform.position + moveSpeed.value * Time.deltaTime * agent.transform.forward,
+				Quaternion.RotateTowards(agent.transform.rotation, rotation, turnSpeed.value * Time.deltaTime)
 				);
 
-			if (Vector3.Distance(agent.transform.position, target.position) < stoppingDistance )
+			if (Vector3.Distance(agent.transform.position, target.position) < stoppingDistance.value)
 			{
 				EndAction(true);
 			}
