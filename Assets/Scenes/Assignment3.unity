@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &183426788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183426789}
+  m_Layer: 0
+  m_Name: Friend location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &183426789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183426788}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.74, y: -4.62, z: -1.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &231582690
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,9 +293,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"friendHappy","_position":{"x":383.0,"y":326.0},"$type":"NodeCanvas.StateMachines.ActionState"},{"_conditionList":{"conditions":[]},"_actionList":{"executionMode":1,"actions":[]},"_position":{"x":435.0,"y":116.0},"$type":"NodeCanvas.StateMachines.OnFSMUpdate"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Friend
-    sad","_position":{"x":606.0,"y":322.0},"$type":"NodeCanvas.StateMachines.ActionState"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
-  _boundGraphObjectReferences: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"audioClip":{"_value":1},"$type":"NodeCanvas.Tasks.Actions.PlayAudioAtPosition"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"friend
+    Happy","_position":{"x":305.0,"y":316.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"audioClip":{"_value":2},"$type":"NodeCanvas.Tasks.Actions.PlayAudioAtPosition"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Friend
+    sad","_position":{"x":646.0,"y":418.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_conditionList":{"conditions":[]},"_actionList":{"executionMode":1,"actions":[{"variableValue":{"_name":"friendMood","_targetVariableID":"192da53f-fbb2-4a4d-8708-fd52c58713dd"},"decreaseRate":-5.0,"$type":"NodeCanvas.Tasks.Actions.DecreaseFriendMood"}]},"_position":{"x":466.0,"y":121.0},"$type":"NodeCanvas.StateMachines.OnFSMUpdate"}],"connections":[{"_condition":{"valueA":{"_name":"friendMood","_targetVariableID":"192da53f-fbb2-4a4d-8708-fd52c58713dd"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckFloat"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"friendMood","_targetVariableID":"192da53f-fbb2-4a4d-8708-fd52c58713dd"},"valueB":{"_value":100.0},"$type":"NodeCanvas.Tasks.Conditions.CheckFloat"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 160b5bf5ed96d7c4dbd679235aeb3ac9, type: 3}
+  - {fileID: 8300000, guid: 4846688a9179e1a4fbdd63a051cb5035, type: 3}
   _boundGraphSource:
     _version: 3.33
     _category: 
@@ -504,7 +539,7 @@ Transform:
   m_GameObject: {fileID: 1355820673}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.94, y: -1.4, z: -7.41}
+  m_LocalPosition: {x: 5.66, y: -4.22, z: -10.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -635,14 +670,14 @@ MonoBehaviour:
   _parentBlackboard: {fileID: 0}
   _serializedBlackboard: '{"_variables":{"speed":{"_value":3.0,"_name":"speed","_id":"4681b059-1078-4905-92e6-38b172c9b924","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"arrivalDistance":{"_value":0.2,"_name":"arrivalDistance","_id":"090232f2-a829-4173-829f-4614dfa1fc5d","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"scanRadius":{"_value":1.0,"_name":"scanRadius","_id":"e2adae47-a8d3-414a-8faa-b107f5622f75","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"initialScanRadius":{"_value":1.0,"_name":"initialScanRadius","_id":"2a667368-88e5-4895-9dcc-9c3db8d250b4","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"friendLocation":{"_value":1,"_name":"friendLocation","_id":"2f0dc7b8-93dc-4445-905e-7692a34d78e8","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"goHome":{"_value":2,"_name":"goHome","_id":"affe41f9-92cb-4272-b806-ff77f071efce","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"callRadius":{"_value":1.0,"_name":"callRadius","_id":"e2adae47-a8d3-414a-8faa-b107f5622f75","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"initialCallRadius":{"_value":1.0,"_name":"initialCallRadius","_id":"2a667368-88e5-4895-9dcc-9c3db8d250b4","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"friendLocation":{"_value":1,"_name":"friendLocation","_id":"8c0af49f-3706-473f-8fa8-9ec03ddacda9","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"goHome":{"_value":2,"_name":"goHome","_id":"ed22c46a-f01c-47b1-9f14-2792a80b0435","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences:
   - {fileID: 0}
-  - {fileID: 231582694}
+  - {fileID: 183426789}
   - {fileID: 1355820674}
   _serializedVariables:
   - _json: '{"_value":3.0,"_name":"speed","_id":"4681b059-1078-4905-92e6-38b172c9b924","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
@@ -651,18 +686,18 @@ MonoBehaviour:
   - _json: '{"_value":0.2,"_name":"arrivalDistance","_id":"090232f2-a829-4173-829f-4614dfa1fc5d","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_value":1.0,"_name":"scanRadius","_id":"e2adae47-a8d3-414a-8faa-b107f5622f75","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_value":1.0,"_name":"callRadius","_id":"e2adae47-a8d3-414a-8faa-b107f5622f75","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_value":1.0,"_name":"initialScanRadius","_id":"2a667368-88e5-4895-9dcc-9c3db8d250b4","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_value":1.0,"_name":"initialCallRadius","_id":"2a667368-88e5-4895-9dcc-9c3db8d250b4","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_value":1,"_name":"friendLocation","_id":"2f0dc7b8-93dc-4445-905e-7692a34d78e8","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+  - _json: '{"_value":1,"_name":"friendLocation","_id":"8c0af49f-3706-473f-8fa8-9ec03ddacda9","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references:
     - {fileID: 0}
-    - {fileID: 231582694}
-  - _json: '{"_value":1,"_name":"goHome","_id":"affe41f9-92cb-4272-b806-ff77f071efce","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+    - {fileID: 183426789}
+  - _json: '{"_value":1,"_name":"goHome","_id":"ed22c46a-f01c-47b1-9f14-2792a80b0435","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references:
     - {fileID: 0}
@@ -680,17 +715,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[]},"_color":{"g":0.2522466,"b":1.0,"a":1.0},"_name":"Call
-    friend","_position":{"x":304.0,"y":326.0},"$type":"NodeCanvas.StateMachines.ActionState"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"g":0.2030742,"b":1.0,"a":1.0},"_name":"Call
-    friend again","_position":{"x":449.0,"y":187.0},"$type":"NodeCanvas.StateMachines.ActionState"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":1.0,"g":0.9425782,"b":0.3215686,"a":1.0},"_name":"Approach","_position":{"x":456.0,"y":460.0},"$type":"NodeCanvas.StateMachines.ActionState"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":0.367784,"g":1.0,"b":0.3215686,"a":1.0},"_name":"Hangout","_position":{"x":671.0,"y":461.0},"$type":"NodeCanvas.StateMachines.ActionState"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
-    home","_position":{"x":861.0,"y":460.0},"$type":"NodeCanvas.StateMachines.ActionState"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"callRadius":{"_name":"callRadius","_targetVariableID":"e2adae47-a8d3-414a-8faa-b107f5622f75"},"friendLocation":{"_name":"friendLocation","_targetVariableID":"8c0af49f-3706-473f-8fa8-9ec03ddacda9"},"callColour":{"r":1.0,"b":0.9093013},"callDuration":2.0,"numberOfScanCirclePoints":10,"$type":"NodeCanvas.Tasks.Actions.CallFriend"}]},"_color":{"g":0.2522466,"b":1.0,"a":1.0},"_name":"Call
+    friend","_position":{"x":303.0,"y":326.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"scanRadiusBBP":{},"$type":"NodeCanvas.Tasks.Actions.CallFriendAgain"}]},"_color":{"g":0.2030742,"b":1.0,"a":1.0},"_name":"Call
+    friend again","_position":{"x":449.0,"y":187.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"target":{"_name":"friendLocation","_targetVariableID":"8c0af49f-3706-473f-8fa8-9ec03ddacda9"},"speed":{"_name":"speed","_targetVariableID":"4681b059-1078-4905-92e6-38b172c9b924"},"arrivalDistance":{"_name":"arrivalDistance","_targetVariableID":"090232f2-a829-4173-829f-4614dfa1fc5d"},"$type":"NodeCanvas.Tasks.Actions.ApproachFriend"}]},"_color":{"r":1.0,"g":0.9425782,"b":0.3215686,"a":1.0},"_name":"Approach","_position":{"x":456.0,"y":460.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"friendLocation":{"_name":"friendLocation","_targetVariableID":"8c0af49f-3706-473f-8fa8-9ec03ddacda9"},"callRadius":{"_name":"callRadius","_targetVariableID":"e2adae47-a8d3-414a-8faa-b107f5622f75"},"initialCallRadius":{"_name":"initialCallRadius","_targetVariableID":"2a667368-88e5-4895-9dcc-9c3db8d250b4"},"$type":"NodeCanvas.Tasks.Actions.HangoutWithFriend"}]},"_color":{"r":0.367784,"g":1.0,"b":0.3215686,"a":1.0},"_name":"Hangout","_position":{"x":711.0,"y":513.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"3"},{"_actionList":{"executionMode":1,"actions":[{"target":{"_name":"goHome","_targetVariableID":"ed22c46a-f01c-47b1-9f14-2792a80b0435"},"speed":{"_name":"speed","_targetVariableID":"4681b059-1078-4905-92e6-38b172c9b924"},"arrivalDistance":{"_name":"arrivalDistance","_targetVariableID":"090232f2-a829-4173-829f-4614dfa1fc5d"},"$type":"NodeCanvas.Tasks.Actions.GoHome"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
+    home","_position":{"x":930.0696,"y":598.0695},"$type":"NodeCanvas.StateMachines.ActionState","$id":"4"}],"connections":[{"_condition":{"variable":{"_name":"friendLocation","_targetVariableID":"8c0af49f-3706-473f-8fa8-9ec03ddacda9"},"$type":"NodeCanvas.Tasks.Conditions.CheckNull"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"variable":{"_name":"friendLocation","_targetVariableID":"8c0af49f-3706-473f-8fa8-9ec03ddacda9"},"$type":"NodeCanvas.Tasks.Conditions.CheckNull"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences: []
   _boundGraphSource:
     _version: 3.33
     _category: 
     _comments: 
-    _translation: {x: 0, y: 0}
-    _zoomFactor: 1
+    _translation: {x: 12, y: 27}
+    _zoomFactor: 0.93494546
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
@@ -806,3 +841,4 @@ SceneRoots:
   - {fileID: 1533919093}
   - {fileID: 231582694}
   - {fileID: 1355820674}
+  - {fileID: 183426789}

@@ -33,7 +33,7 @@ namespace NodeCanvas.Tasks.Actions {
                 Collider[] colliders = Physics.OverlapSphere(agent.transform.position, callRadius.value);
                 foreach (Collider collider in colliders)
                 {
-                    Blackboard blackboard = collider.GetComponent<Blackboard>();
+                    IBlackboard blackboard = collider.GetComponent<FSMOwner>().graph.blackboard;
                     float friendMood = blackboard.GetVariableValue<float>("friendMood");
 
                     if (friendMood == 0)

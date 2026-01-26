@@ -1,37 +1,42 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using UnityEngine;
 
 
 namespace NodeCanvas.Tasks.Actions {
 
 	public class HangoutWithFriend : ActionTask {
 
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
-		protected override string OnInit() {
-			return null;
-		}
+        public BBParameter<Transform> friendLocation;
+        public BBParameter<float> callRadius;
+		public BBParameter<float> initialCallRadius;
 
-		//This is called once each time the task is enabled.
-		//Call EndAction() to mark the action as finished, either in success or failure.
-		//EndAction can be called from anywhere.
-		protected override void OnExecute() {
-			EndAction(true);
-		}
+        public float hangoutRate = 25f;
+        public float endOfHangout = 100f;
+
+        private Blackboard friendLocationBB;
+        private float hangoutValue;
+
+        protected override void OnExecute() 
+		{
+            friendLocationBB = friendLocation.value.GetComponent<Blackboard>();
+            hangoutValue = friendLocationBB.GetVariableValue<float>("hangoutValue");
+
+            friendLocation.value = null;
+            callRadius.value = initialCallRadius.value;
+        }
 
 		//Called once per frame while the action is active.
-		protected override void OnUpdate() {
-			
-		}
+		protected override void OnUpdate() 
+        {
+            hangoutValue += hangoutRate * Time.deltaTime;
 
-		//Called when the task is disabled.
-		protected override void OnStop() {
-			
-		}
+            friendLocationBB.SetVariableValue("hangoutValue", hangoutValue);
 
-		//Called when the task is paused.
-		protected override void OnPause() {
-			
-		}
+            if (hangoutValue > endOfHangout)
+            {
+                EndAction(true);
+            }
+        }
 	}
 }
