@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 5f;
     private CharacterController characterController;
     private Vector3 moveInput;
-    private Vector3 velocity;
 
     public NavMeshAgent navAgent;
     private InputSystem_Actions inputActions;
