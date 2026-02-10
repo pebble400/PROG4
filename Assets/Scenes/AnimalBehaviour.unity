@@ -894,7 +894,7 @@ MonoBehaviour:
   _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"timeSinceLastSampleBBP":{"_name":"Time
     Since Last Sample BBP","_targetVariableID":"8547cf46-015b-47f7-9690-ece406b1c0d7"},"targetPositionBBP":{"_name":"Target
     Position BBP","_targetVariableID":"5d2097e9-6061-49a6-be22-53670b1f4fdf"},"isMovingBBP":{"_name":"Is
-    Moving BBP","_targetVariableID":"e3a76b20-aed6-414f-84ca-8d1e84ea2547"},"$type":"NodeCanvas.Tasks.Actions.WonderTask"}]},"_color":{"r":0.5424528,"g":0.566095,"b":1.0,"a":1.0},"_name":"Wander","_position":{"x":965.0,"y":540.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"target":1,"moveSpeed":{"_value":5.0},"turnSpeed":{"_value":180.0},"stoppingDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.MoveAndRotateTowards"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Approach","_position":{"x":643.0,"y":607.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_conditionList":{"conditions":[]},"_actionList":{"executionMode":1,"actions":[{"targetPositionBBP":{"_name":"Target
+    Moving BBP","_targetVariableID":"e3a76b20-aed6-414f-84ca-8d1e84ea2547"},"$type":"NodeCanvas.Tasks.Actions.WonderTask"}]},"_color":{"r":0.5424528,"g":0.566095,"b":1.0,"a":1.0},"_name":"Wander","_position":{"x":966.0003,"y":540.0001},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"target":1,"moveSpeed":{"_value":5.0},"turnSpeed":{"_value":180.0},"stoppingDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.MoveAndRotateTowards"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Approach","_position":{"x":643.0,"y":607.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_conditionList":{"conditions":[]},"_actionList":{"executionMode":1,"actions":[{"targetPositionBBP":{"_name":"Target
     Position BBP","_targetVariableID":"5d2097e9-6061-49a6-be22-53670b1f4fdf"},"timeSinceLastSampleBBP":{"_name":"Time
     Since Last Sample BBP","_targetVariableID":"8547cf46-015b-47f7-9690-ece406b1c0d7"},"isMovingBBP":{"_name":"Is
     Moving BBP","_targetVariableID":"e3a76b20-aed6-414f-84ca-8d1e84ea2547"},"sampleRateInSeconds":0.5,"sampleRadiusInUnits":5.0,"$type":"NodeCanvas.Tasks.Actions.NavigationTask"}]},"_position":{"x":778.0,"y":279.0},"$type":"NodeCanvas.StateMachines.OnFSMUpdate"}],"connections":[{"_condition":{"timeout":{"_value":10.0},"$type":"NodeCanvas.Tasks.Conditions.Timeout"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
@@ -905,8 +905,8 @@ MonoBehaviour:
     _version: 3.33
     _category: 
     _comments: 
-    _translation: {x: -32, y: -119}
-    _zoomFactor: 1
+    _translation: {x: -337, y: -205}
+    _zoomFactor: 0.9997072
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
